@@ -13,6 +13,3 @@ title = "JP Astro"
 
 # Disable unused taxonomy pages
 disableKinds = ["taxonomy", "term"]
-
-[build]
-  writeStats = true

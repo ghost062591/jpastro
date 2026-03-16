@@ -8,12 +8,13 @@
 
   <section class="gallery-grid">
     {{ range where .Site.RegularPages "Section" "projects" }}
+    {{ $p := . }}
     <a class="gallery-item" href="{{ .RelPermalink }}" data-animate>
       <div class="gallery-item-img-wrap">
         {{ with .Params.cover }}
         <img
-          src="{{ $.RelPermalink }}{{ . | relURL }}"
-          alt="{{ $.Title }}"
+          src="{{ $p.RelPermalink }}{{ . }}"
+          alt="{{ $p.Title }}"
           loading="lazy"
         >
         {{ end }}

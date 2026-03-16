@@ -4,7 +4,7 @@
   {{/* Hero Image */}}
   {{ with .Params.cover }}
   <div class="project-hero">
-    <img src="{{ $.Page.RelPermalink }}{{ . | relURL }}" alt="{{ $.Title }}">
+    <img src="{{ $.RelPermalink }}{{ . }}" alt="{{ $.Title }}">
     <div class="project-hero-overlay"></div>
     <div class="project-hero-title" data-animate>
       <h1>{{ $.Title }}</h1>

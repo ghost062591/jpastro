@@ -29,7 +29,7 @@ gallery:
   - "Screenshot 2026-03-11 225428.png"
 
 # Google Drive full-resolution download link
-highres_url: "https://drive.google.com/file/d/12V-zsYtKkKeyPVBWL9k2i1U37SZcp5AA/view?usp=sharing"
+highres_url: "https://drive.google.com/file/d/1w2OZWHTUlUb_lEZZDjxQ4LATbn45gyX5/view?usp=sharing"
 
 capture:
   date: "March 08-10, 2026"

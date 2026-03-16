@@ -1,0 +1,18 @@
+baseURL = "https://jpastro.cc"
+languageCode = "en-us"
+title = "JP Astro"
+
+[params]
+  description = "Astrophotography by JP"
+  author = "JP"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Disable unused taxonomy pages
+disableKinds = ["taxonomy", "term"]
+
+[build]
+  writeStats = true

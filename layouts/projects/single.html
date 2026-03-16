@@ -1,0 +1,107 @@
+{{ define "main" }}
+<main class="project-page">
+
+  {{/* Hero Image */}}
+  {{ with .Params.cover }}
+  <div class="project-hero">
+    <img src="{{ $.Page.RelPermalink }}{{ . | relURL }}" alt="{{ $.Title }}">
+    <div class="project-hero-overlay"></div>
+    <div class="project-hero-title" data-animate>
+      <h1>{{ $.Title }}</h1>
+      {{ with $.Params.object }}<p class="hero-object">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="project-content">
+
+    {{/* Home link */}}
+    <nav class="project-nav" data-animate>
+      <a href="{{ "/" | relURL }}" class="home-link">← Home</a>
+    </nav>
+
+    {{/* Capture Details */}}
+    {{ with .Params.capture }}
+    <section class="detail-section" data-animate>
+      <h2 class="section-heading">Capture</h2>
+      <dl class="detail-grid">
+        {{ with .date }}<div><dt>Date</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .location }}<div><dt>Location</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .total_time }}<div><dt>Total Integration</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .frames }}<div><dt>Frames</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .darks }}<div><dt>Darks</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .flats }}<div><dt>Flats</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .biases }}<div><dt>Biases</dt><dd>{{ . }}</dd></div>{{ end }}
+      </dl>
+    </section>
+    {{ end }}
+
+    {{/* Equipment */}}
+    {{ with .Params.equipment }}
+    <section class="detail-section" data-animate>
+      <h2 class="section-heading">Equipment</h2>
+      <dl class="detail-grid">
+        {{ with .telescope }}<div><dt>Telescope</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .camera }}<div><dt>Camera</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .mount }}<div><dt>Mount</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .filters }}<div><dt>Filters</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .accessories }}<div><dt>Accessories</dt><dd>{{ . }}</dd></div>{{ end }}
+      </dl>
+    </section>
+    {{ end }}
+
+    {{/* Processing */}}
+    {{ with .Params.processing }}
+    <section class="detail-section" data-animate>
+      <h2 class="section-heading">Processing</h2>
+      {{ with .software }}<p class="processing-software">Software: <span>{{ . }}</span></p>{{ end }}
+      {{ with .steps }}
+      <ol class="processing-steps">
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ol>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    {{/* Written content (markdown body) */}}
+    {{ with .Content }}
+    <section class="detail-section project-body" data-animate>
+      {{ . }}
+    </section>
+    {{ end }}
+
+    {{/* Gallery Images */}}
+    {{ with .Params.gallery }}
+    <section class="detail-section" data-animate>
+      <h2 class="section-heading">Images</h2>
+      <div class="project-gallery">
+        {{ range . }}
+        <div class="project-gallery-item">
+          <img src="{{ $.Page.RelPermalink }}{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* High-res download */}}
+    {{ with .Params.highres_url }}
+    <section class="detail-section highres-section" data-animate>
+      <h2 class="section-heading">Full Resolution</h2>
+      <p class="highres-note">Download the full resolution master file.</p>
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="highres-btn">
+        Download Full Resolution
+      </a>
+    </section>
+    {{ end }}
+
+    {{/* Back home */}}
+    <div class="project-footer" data-animate>
+      <a href="{{ "/" | relURL }}" class="home-link">← Back to Gallery</a>
+    </div>
+
+  </div>
+</main>
+{{ end }}

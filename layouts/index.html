@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main class="gallery-page">
+
+  <header class="site-header" data-animate>
+    <h1 class="site-title">{{ .Site.Title }}</h1>
+    <p class="site-subtitle">{{ .Site.Params.description }}</p>
+  </header>
+
+  <section class="gallery-grid">
+    {{ range where .Site.RegularPages "Section" "projects" }}
+    <a class="gallery-item" href="{{ .RelPermalink }}" data-animate>
+      <div class="gallery-item-img-wrap">
+        {{ with .Params.cover }}
+        <img
+          src="{{ $.RelPermalink }}{{ . | relURL }}"
+          alt="{{ $.Title }}"
+          loading="lazy"
+        >
+        {{ end }}
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-title">{{ .Title }}</span>
+          {{ with .Params.object }}<span class="gallery-item-object">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </section>
+
+</main>
+{{ end }}

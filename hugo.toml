@@ -3,8 +3,8 @@ languageCode = "en-us"
 title = "JP Astro"
 
 [params]
-  description = "Astrophotography by JP"
-  author = "JP"
+  description = "Astrophotography by Johnathan Allison"
+  author = "Johnathan Allison"
 
 [markup]
   [markup.goldmark]

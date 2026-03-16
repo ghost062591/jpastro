@@ -68,4 +68,6 @@ processing:
     - "Final tone mapping, added signature, and export TIFF and JPEG from Photoshop"
 ---
 
+IC 405, also known as the Flaming Star Nebula, is an emission and reflection nebula located approximately 1,500 light-years away in the constellation Auriga. It surrounds the hot, luminous star AE Aurigae, whose radiation ionizes the surrounding gas and illuminates the dust, creating the characteristic flame-like appearance.
 
+*Source: [Wikipedia — Flaming Star Nebula](https://en.wikipedia.org/wiki/Flaming_Star_Nebula)*
